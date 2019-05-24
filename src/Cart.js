@@ -29,7 +29,10 @@ deleteItem(name){
 
  totalPrice(){
     let gross = 0;
-     this.shoppingCart.reduce(function(a,b){ return a.price + b.price})    
+    this.shoppingCart.forEach(function(ele){
+     gross+=ele.price;
+    })
+   return gross; 
  }
  
 

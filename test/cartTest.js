@@ -6,7 +6,7 @@ const Cart = require('../src/Cart.js');
 
 
   describe('Cart', ()=>{
-      it('should initialize a Cart', () => {
+      xit('should initialize a Cart', () => {
           const cart = new Cart();
           console.log("this is", typeof cart)
           assert.exists(cart);
@@ -14,7 +14,7 @@ const Cart = require('../src/Cart.js');
         //   assert.exists(cart);
       })
 
-      it('should return an empty cart', ()=>{
+      xit('should return an empty cart', ()=>{
           const cart = new Cart();
           assert.exists(cart.getCart());
           assert.deepEqual(cart.getCart(), []);
@@ -23,7 +23,7 @@ const Cart = require('../src/Cart.js');
 
 
 
-      it('should create an item in shopping cart', ()=>{
+      xit('should create an item in shopping cart', ()=>{
           const cart = new Cart();
           const item1 = cart.createItem("mango", 2, 2)
           const item2 = cart.createItem("apple", 2, 2)
@@ -32,7 +32,7 @@ const Cart = require('../src/Cart.js');
         //   assert.deepEqual(cart.getCart().length, 1);
       })
 
-      it('should delete item', () => {
+      xit('should delete item', () => {
 
         const cart  =  new Cart();
         const item1 = cart.createItem("mango", 2, 2)
@@ -46,6 +46,7 @@ const Cart = require('../src/Cart.js');
         const cart  =  new Cart();
         const item1 = cart.createItem("mango", 2, 2)
         const item2 = cart.createItem("apple", 2, 2)
+        console.log(cart.totalPrice())
 
         assert.equal(cart.totalPrice() , 4)
 
