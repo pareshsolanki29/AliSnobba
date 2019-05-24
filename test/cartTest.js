@@ -26,28 +26,25 @@ const Cart = require('../src/Cart.js');
       xit('should create an item in shopping cart', ()=>{
           const cart = new Cart();
           const item1 = cart.createItem("mango", 2, 2)
-          const item2 = cart.createItem("apple", 2, 2)
+          const item2 = cart.createItem("mango", 2, 2)
           console.log(typeof cart.shoppingCart)
-          expect(cart.shoppingCart[1].item).to.deep.equal("apple")
+          expect(cart.shoppingCart[0].item).to.deep.equal("mango")
         //   assert.deepEqual(cart.getCart().length, 1);
       })
 
-      xit('should delete item', () => {
+      it('should delete item', () => {
 
         const cart  =  new Cart();
         const item1 = cart.createItem("mango", 2, 2)
         const item2 = cart.createItem("apple", 2, 2)
         cart.deleteItem("mango");
-        console.log("this is item:" ,cart.shoppingCart[0].item);
+        console.log("this is item:" ,cart.shoppingCart);
         })
 
-        it('should return total price', ()=>{
-
+        xit('should return total price', ()=>{
         const cart  =  new Cart();
         const item1 = cart.createItem("mango", 2, 2)
         const item2 = cart.createItem("apple", 2, 2)
-        console.log(cart.totalPrice())
-
         assert.equal(cart.totalPrice() , 4)
 
         })

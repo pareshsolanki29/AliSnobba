@@ -1,10 +1,11 @@
 
 
 class Item{
-    constructor(item, price, discount){
+    constructor(item, price, discount, quantity){
         this.item = item;
         this.price = price;
         this.discount = discount;
+        this.quantity = quantity;
     }
     getItem(){
         return this.item

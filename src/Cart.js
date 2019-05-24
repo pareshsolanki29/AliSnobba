@@ -12,19 +12,17 @@ class Cart {
      return this.shoppingCart;
  }
 
- createItem(item, price, discount){
-     
-     let item1 = new Item(item, price, discount);
-     let itemArray = [];
-     itemArray.push(item1);
-     this.shoppingCart.push(item1);
+ createItem(item, price, discount){ 
+     const item1 = new Item(item, price, discount);
+     this.shoppingCart.push(item1)
      return this.shoppingCart;
-
  }
-deleteItem(name){
-    
-    this.shoppingCart.filter(function(e) { console.log(e.item);return e.item !== name; });
-}
+
+ 
+    deleteItem(name){ 
+      this.shoppingCart = this.shoppingCart.filter(ele => ele.item !== name);
+      return this.shoppingCart;
+    }
 
 
  totalPrice(){
