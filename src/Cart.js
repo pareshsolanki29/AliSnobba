@@ -25,15 +25,27 @@ class Cart {
     }
 
 
- totalPrice(){
+    totalPrice(){
     let gross = 0;
     this.shoppingCart.forEach(function(ele){
      gross+=ele.price;
     })
    return gross; 
  }
- 
+
+ calculateDiscount(){
+    var dis =this.shoppingCart.map(pr =>  pr.price - pr.discount/100 )
+    var totalAfterDiscount = dis.reduce((acc, price) => acc + price, 0);
+    return totalAfterDiscount.toFixed(2);
+ }
+
+ getItemQuantity(name){
+     var quantity = this.shoppingCart.filter(ele => ele.item == name)
+     return quantity.length;
+ }
+
 
 }
+
 
 module.exports =  Cart;
